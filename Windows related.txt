@@ -1,0 +1,15 @@
+Adding right click context menu element in Windows 10
+In this example Windows Terminal is added
+
+Go to Regedit, \HKEY_CURRENT_USER\Software\Classes\Directory\shell
+Under shell create new key
+Name your function (not really important) e.g.: OpenFolderInTerminal
+
+Edit the Default string value in OpenFolderInTerminal, this will be displayed element text in the context menu e.g.: Open Folder in Terminal 
+In OpenFolderInTerminal add new string, named Icon, edit its value, add the wanted icon full path with name. e.g.: c:\Windows\_icons\terminal.ico
+
+Under OpenFolderInTerminal add new key, named command, and edit the default string value to the command you want executed. e.g.: "c:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.11.3471.0_x64__8wekyb3d8bbwe\wt.exe"
+
+In Windows Terminal settings edit the default profile's starting directory to be the parent process directory.
+
+Restart explorer exe, and now it should work.
